@@ -15,7 +15,7 @@ public class ConnectionFactory {
  private static final String PASS = ""; 
         
  
- public static Connection getConnection() throws SQLException, ClassNotFoundException{
+ public static Connection getConnection() {
  
     try{
         Class.forName(DRIVER);

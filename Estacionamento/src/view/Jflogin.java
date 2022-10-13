@@ -90,7 +90,7 @@ public class Jflogin extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(246, 246, 246)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(217, Short.MAX_VALUE))
+                .addContainerGap(214, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
