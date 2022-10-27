@@ -47,12 +47,9 @@ public class JFCadastrarVaga extends javax.swing.JFrame {
 
         jLabel2.setText("Número");
 
-        jTFnumero.setText("jTextField1");
         jTFnumero.setName("jTFNumero"); // NOI18N
 
         jLabel3.setText("Rua");
-
-        jTFRua.setText("jTextField2");
 
         jLabel4.setText("Tipo de vaga");
 
@@ -95,14 +92,14 @@ public class JFCadastrarVaga extends javax.swing.JFrame {
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jRBObliqua, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jRBParalela, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 155, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 92, Short.MAX_VALUE)
-                        .addComponent(jBtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jBtnSalvar)
                         .addGap(18, 18, 18)
-                        .addComponent(jBtnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jBtnLimpar)
                         .addGap(18, 18, 18)
-                        .addComponent(jBtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jBtnCancelar)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -144,10 +141,12 @@ public class JFCadastrarVaga extends javax.swing.JFrame {
        VagaDAO dao = new VagaDAO();
        v.setNumero(Integer.parseInt(jTFnumero.getText()));
        v.setRua(jTFRua.getText());
+       
+       
        if(jRBObliqua.isSelected()){
-           v.setObliquo(true);
+           v.setObliqua(true);
        }else if (jRBParalela.isSelected()){
-           v.setObliquo(false);
+           v.setObliqua(false);
        }
        dao.create(v);
 // TODO add your handling code here:
