@@ -1,14 +1,20 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package model.bean;
 
-
+/**
+ *
+ * @author 04031966040
+ */
 public class Vaga {
-
     private int idVaga;
     private int numero;
     private String rua;
-    private boolean obliqua; 
-    
+    private boolean obliqua;
+
     public int getIdVaga() {
         return idVaga;
     }
@@ -33,13 +39,13 @@ public class Vaga {
         this.rua = rua;
     }
 
-    public boolean getObliqua() {
+    public boolean isObliqua() {
         return obliqua;
     }
 
-    public void setObliqua(boolean obliqua) {
-        this.obliqua = obliqua;
+    public void setObliqua(boolean obliquo) {
+        this.obliqua = obliquo;
     }
     
+    
 }
-

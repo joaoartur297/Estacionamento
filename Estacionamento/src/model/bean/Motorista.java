@@ -1,18 +1,24 @@
-
+    /*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package model.bean;
 
-
+/**
+ *
+ * @author José Henrique
+ */
 public class Motorista {
-
-       private int idMotorista;
-    private String nomeCompleto;
+    private int idMotorista;
+    private String nome;
     private String genero;
-    private int RG;
-    private int CPF; 
-    private int celular;
+    private String rg;
+    private String cpf;
+    private String celular;
     private String email;
     private String senha;
-    
+
     public int getIdMotorista() {
         return idMotorista;
     }
@@ -21,12 +27,12 @@ public class Motorista {
         this.idMotorista = idMotorista;
     }
 
-    public String getNomeCompleto() {
-        return nomeCompleto;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeCompleto(String nomeCompleto) {
-        this.nomeCompleto = nomeCompleto;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getGenero() {
@@ -37,27 +43,27 @@ public class Motorista {
         this.genero = genero;
     }
 
-    public int getRG() {
-        return RG;
+    public String getRg() {
+        return rg;
     }
 
-    public void setRG(int RG) {
-        this.RG = RG;
+    public void setRg(String rg) {
+        this.rg = rg;
     }
 
-    public int getCPF() {
-        return CPF;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setCPF(int CPF) {
-        this.CPF = CPF;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
-    public int getCelular() {
+    public String getCelular() {
         return celular;
     }
 
-    public void setCelular(int celular) {
+    public void setCelular(String celular) {
         this.celular = celular;
     }
 
@@ -78,4 +84,5 @@ public class Motorista {
     }
     
     
+
 }
