@@ -10,29 +10,27 @@ import model.dao.VagaDAO;
 
 /**
  *
- * @author 04031966040
+ * @author gabri
  */
 public class JFAtualizarVaga extends javax.swing.JFrame {
+
     private static int idVaga;
-    
     /**
      * Creates new form JFAtualizarVaga
      */
     public JFAtualizarVaga(int idVaga) {
         initComponents();
         VagaDAO vdao = new VagaDAO();
-        Vaga v = new Vaga();
+        Vaga v = vdao.read(idVaga);
         lblIdVaga.setText(String.valueOf(v.getIdVaga()));
-        jTFNumero.setText(String.valueOf(v.getNumero()));
+        jTFnumero.setText(String.valueOf(v.getNumero()));
         jTFRua.setText(v.getRua());
-        if (v.isObliqua() == true) {
-            jRBObliquo.setSelected(true);
-        } else if (v.isObliqua() == false) {
-            jRDParalela.setSelected(true);
+        if(v.isObliqua() == true){
+            jRBObliqua.setSelected(true);
+        }else if (v.isObliqua() == false){
+            jRBParalela.setSelected(true);
         }
-        
-    }   
-    
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,70 +41,66 @@ public class JFAtualizarVaga extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel5 = new javax.swing.JLabel();
         bGTipoVaga = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
+        jTFnumero = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jTFNumero = new javax.swing.JTextField();
         jTFRua = new javax.swing.JTextField();
-        jRBObliquo = new javax.swing.JRadioButton();
-        jRDParalela = new javax.swing.JRadioButton();
+        jLabel4 = new javax.swing.JLabel();
+        jRBObliqua = new javax.swing.JRadioButton();
+        jRBParalela = new javax.swing.JRadioButton();
         jBtnCancelar = new javax.swing.JButton();
         jBtnLimpar = new javax.swing.JButton();
         jBtnSalvar = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         lblIdVaga = new javax.swing.JLabel();
+
+        jLabel5.setText("jLabel5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Nirmala UI", 1, 36)); // NOI18N
-        jLabel1.setText("Atualizar Vaga");
+        jTFnumero.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        jTFnumero.setName("jTFNumero"); // NOI18N
+        jTFnumero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFnumeroActionPerformed(evt);
+            }
+        });
 
-        jLabel2.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
         jLabel2.setText("Número");
 
-        jLabel3.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("Atualizar Vaga");
+
+        jLabel3.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
         jLabel3.setText("Rua");
 
-        jLabel4.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
-        jLabel4.setText("Tipo de Vaga");
+        jTFRua.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
 
-        jTFNumero.setText("Número da vaga");
-        jTFNumero.addActionListener(new java.awt.event.ActionListener() {
+        jLabel4.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        jLabel4.setText("Tipo de vaga");
+
+        bGTipoVaga.add(jRBObliqua);
+        jRBObliqua.setText("Obliqua");
+        jRBObliqua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFNumeroActionPerformed(evt);
+                jRBObliquaActionPerformed(evt);
             }
         });
 
-        jTFRua.setText("Nome da Rua");
-        jTFRua.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFRuaActionPerformed(evt);
-            }
-        });
+        bGTipoVaga.add(jRBParalela);
+        jRBParalela.setText("Paralela");
 
-        bGTipoVaga.add(jRBObliquo);
-        jRBObliquo.setText("Oblíqua");
-        jRBObliquo.setName(""); // NOI18N
-
-        bGTipoVaga.add(jRDParalela);
-        jRDParalela.setText("Paralela");
-        jRDParalela.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRDParalelaActionPerformed(evt);
-            }
-        });
-
+        jBtnCancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jBtnCancelar.setText("Cancelar");
-        jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnCancelarActionPerformed(evt);
-            }
-        });
 
+        jBtnLimpar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jBtnLimpar.setText("Limpar");
 
+        jBtnSalvar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jBtnSalvar.setText("Salvar");
         jBtnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,123 +108,110 @@ public class JFAtualizarVaga extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("ID VAGA:");
+        jLabel6.setText("Id da Vaga:");
 
-        lblIdVaga.setText("jLabel6");
+        lblIdVaga.setText("jLabel7");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(83, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(114, 114, 114)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel6)
+                        .addGap(1, 1, 1)
                         .addComponent(lblIdVaga))
+                    .addComponent(jTFnumero)
+                    .addComponent(jTFRua)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jRBObliquo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jRDParalela)
-                        .addGap(82, 82, 82))))
+                        .addComponent(jBtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(75, 75, 75)
+                        .addComponent(jBtnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53)
+                        .addComponent(jBtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(152, 152, 152))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jBtnSalvar)
-                        .addGap(79, 79, 79)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTFNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTFRua, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jBtnLimpar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jBtnCancelar)
-                                .addContainerGap())))))
+                .addGap(36, 36, 36)
+                .addComponent(jRBObliqua, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jRBParalela, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(196, 196, 196)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(177, 177, 177)
-                        .addComponent(jLabel2)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(165, 165, 165)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(130, 130, 130))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(lblIdVaga))
-                .addGap(37, 37, 37)
-                .addComponent(jLabel2)
+                    .addComponent(jLabel6)
+                    .addComponent(lblIdVaga)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jTFNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTFnumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTFRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRBObliquo)
-                    .addComponent(jRDParalela))
-                .addGap(68, 68, 68)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnCancelar)
-                    .addComponent(jBtnLimpar)
-                    .addComponent(jBtnSalvar))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jRBObliqua)
+                            .addComponent(jRBParalela))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jBtnSalvar)
+                            .addComponent(jBtnLimpar)
+                            .addComponent(jBtnCancelar))
+                        .addContainerGap())))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTFNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNumeroActionPerformed
+    private void jRBObliquaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBObliquaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTFNumeroActionPerformed
-
-    private void jRDParalelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRDParalelaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRDParalelaActionPerformed
-
-    private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnCancelarActionPerformed
+    }//GEN-LAST:event_jRBObliquaActionPerformed
 
     private void jBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalvarActionPerformed
         Vaga v = new Vaga();
         VagaDAO vdao = new VagaDAO();
         v.setIdVaga(Integer.parseInt(lblIdVaga.getText()));
-        v.setNumero(Integer.parseInt(jTFNumero.getText()));
+        v.setNumero(Integer.parseInt(jTFnumero.getText()));
         v.setRua(jTFRua.getText());
-        if (jRBObliquo.isSelected()) {
-            v.setObliqua(true);
-        } else if (jRDParalela.isSelected()) {
-            v.setObliqua(false);
+        if(jRBObliqua.isSelected()){
+            v.setObliquo(true);
+        }else if(jRBParalela.isSelected()){
+            v.setObliquo(false);
         }
         vdao.update(v);
-        // TODO add your handling code here:
+    
     }//GEN-LAST:event_jBtnSalvarActionPerformed
 
-    private void jTFRuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFRuaActionPerformed
+    private void jTFnumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFnumeroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTFRuaActionPerformed
-    
+    }//GEN-LAST:event_jTFnumeroActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -277,10 +258,11 @@ public class JFAtualizarVaga extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JRadioButton jRBObliquo;
-    private javax.swing.JRadioButton jRDParalela;
-    private javax.swing.JTextField jTFNumero;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JRadioButton jRBObliqua;
+    private javax.swing.JRadioButton jRBParalela;
     private javax.swing.JTextField jTFRua;
+    private javax.swing.JTextField jTFnumero;
     private javax.swing.JLabel lblIdVaga;
     // End of variables declaration//GEN-END:variables
 }
