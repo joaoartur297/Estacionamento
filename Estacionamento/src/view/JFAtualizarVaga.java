@@ -59,7 +59,8 @@ public class JFAtualizarVaga extends javax.swing.JFrame {
 
         jLabel5.setText("jLabel5");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("atualizar vaga");
 
         jTFnumero.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
         jTFnumero.setName("jTFNumero"); // NOI18N
@@ -96,9 +97,19 @@ public class JFAtualizarVaga extends javax.swing.JFrame {
 
         jBtnCancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jBtnCancelar.setText("Cancelar");
+        jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCancelarActionPerformed(evt);
+            }
+        });
 
         jBtnLimpar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jBtnLimpar.setText("Limpar");
+        jBtnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnLimparActionPerformed(evt);
+            }
+        });
 
         jBtnSalvar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jBtnSalvar.setText("Salvar");
@@ -211,6 +222,16 @@ public class JFAtualizarVaga extends javax.swing.JFrame {
     private void jTFnumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFnumeroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFnumeroActionPerformed
+
+    private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
+          dispose(); 
+    }//GEN-LAST:event_jBtnCancelarActionPerformed
+
+    private void jBtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLimparActionPerformed
+          jTFRua.setText("");
+          jTFnumero.setText("");
+          bGTipoVaga.clearSelection();
+    }//GEN-LAST:event_jBtnLimparActionPerformed
 
     /**
      * @param args the command line arguments

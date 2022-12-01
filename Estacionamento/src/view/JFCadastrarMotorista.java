@@ -51,6 +51,7 @@ public class JFCadastrarMotorista extends javax.swing.JFrame {
         JbtnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("cadastrar motorista");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText("Cadastrar Motorista");
@@ -125,9 +126,19 @@ public class JFCadastrarMotorista extends javax.swing.JFrame {
 
         JbtnLimpar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         JbtnLimpar.setText("Limpar");
+        JbtnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JbtnLimparActionPerformed(evt);
+            }
+        });
 
         JbtnCancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         JbtnCancelar.setText("Cancelar");
+        JbtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JbtnCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -266,6 +277,19 @@ public class JFCadastrarMotorista extends javax.swing.JFrame {
        mdao.create(m);
      // TODO add your handling code here:
     }//GEN-LAST:event_JbtnSalvarActionPerformed
+
+    private void JbtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JbtnLimparActionPerformed
+            jTFNome.setText("");
+        jTFGenero.setText("");
+         jTFRG.setText("");
+        jTFCPF.setText("");
+         jTFNumero.setText("");
+        jTFEmail.setText("");
+    }//GEN-LAST:event_JbtnLimparActionPerformed
+
+    private void JbtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JbtnCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JbtnCancelarActionPerformed
                                     
      
     /**

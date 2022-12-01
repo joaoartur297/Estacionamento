@@ -63,11 +63,12 @@ public class JFAtualizarMotorista extends javax.swing.JFrame {
         lblIdMotorista = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("atualizar motorista");
 
         jLabel3.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
         jLabel3.setText("Gênero");
 
-        JbtnSalvar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        JbtnSalvar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         JbtnSalvar.setText("Salvar");
         JbtnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,8 +79,13 @@ public class JFAtualizarMotorista extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
         jLabel4.setText("RG");
 
-        JbtnLimpar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        JbtnLimpar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         JbtnLimpar.setText("Limpar");
+        JbtnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JbtnLimparActionPerformed(evt);
+            }
+        });
 
         jTFRG.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
         jTFRG.addActionListener(new java.awt.event.ActionListener() {
@@ -88,8 +94,13 @@ public class JFAtualizarMotorista extends javax.swing.JFrame {
             }
         });
 
-        JbtnCancelar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        JbtnCancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         JbtnCancelar.setText("Cancelar");
+        JbtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JbtnCancelarActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
         jLabel5.setText("CPF");
@@ -188,10 +199,7 @@ public class JFAtualizarMotorista extends javax.swing.JFrame {
                                 .addComponent(jLabel2))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(258, 258, 258)
-                                .addComponent(jLabel3)))
-                        .addContainerGap(237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel3))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(268, 268, 268)
                                 .addComponent(jLabel4))
@@ -204,7 +212,7 @@ public class JFAtualizarMotorista extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(255, 255, 255)
                                 .addComponent(jLabel7)))
-                        .addGap(242, 242, 242))))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,7 +256,7 @@ public class JFAtualizarMotorista extends javax.swing.JFrame {
                         .addComponent(JbtnCancelar)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(JbtnSalvar)
                             .addComponent(JbtnLimpar))
@@ -292,6 +300,19 @@ public class JFAtualizarMotorista extends javax.swing.JFrame {
     private void jTFNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFNomeActionPerformed
+
+    private void JbtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JbtnLimparActionPerformed
+        jTFNome.setText("");
+        jTFGenero.setText("");
+         jTFRG.setText("");
+        jTFCPF.setText("");
+         jTFNumero.setText("");
+        jTFEmail.setText("");
+    }//GEN-LAST:event_JbtnLimparActionPerformed
+
+    private void JbtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JbtnCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JbtnCancelarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -40,6 +40,7 @@ public class JFListarVaga extends javax.swing.JFrame {
         jBtnSalvar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("listar vaga");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -148,6 +149,7 @@ public class JFListarVaga extends javax.swing.JFrame {
         }
         readJTable();
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jBtnEditarActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened

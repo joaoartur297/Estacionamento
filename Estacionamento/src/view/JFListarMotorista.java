@@ -38,6 +38,7 @@ public class JFListarMotorista extends javax.swing.JFrame {
         jBnExcluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("listar motorista");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -154,7 +155,7 @@ public class JFListarMotorista extends javax.swing.JFrame {
         }
         readJTable();
                                            
-
+  
     }//GEN-LAST:event_jBnEditarActionPerformed
 
     private void jBnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBnExcluirActionPerformed
